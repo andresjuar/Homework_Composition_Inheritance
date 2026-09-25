@@ -1,0 +1,13 @@
+from dataclasses import dataclass
+from Freelancer import Freelancer
+
+
+@dataclass
+class FreelancerWithCommission(Freelancer):
+    """Freelancer que se le paga en base al número de horas trabajadas y que obtiene una comisión"""
+
+    commission: float = 100
+    contracts_landed: float = 0
+
+    def compute_pay(self) -> float:
+        return super().compute_pay() + self.commission * self.contracts_landed

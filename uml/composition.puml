@@ -1,0 +1,54 @@
+@startuml composition
+
+abstract class Contract {
+  + {abstract} get_payment(): float
+}
+
+class SalariedContract {
+  + monthly_salary: float
+  + percentage: float
+  + get_payment(): float
+}
+
+class HourlyContract {
+  + pay_rate: float
+  + hours_worked: int
+  + employer_cost: float 
+  + get_payment(): float
+}
+
+class FreelancerContract {
+  + pay_rate: float
+  + hours_worked: int 
+  + vat_number: str
+  + get_payment(): float
+}
+
+abstract class Commission {
+  + {abstract} get_payment(): float
+}
+
+class ContractCommission {
+  + commission: float 
+  + contracts_landed: int 
+  + get_payment(): float
+}
+
+class Employee {
+  + name: str
+  + id: int
+  + compute_pay(): float
+  + contract: Contract
+  + commission: Commission (es opcional)
+}
+
+Contract <|-- SalariedContract
+Contract <|-- HourlyContract
+Contract <|-- FreelancerContract
+
+Commission <|-- ContractCommission
+
+Employee *--  Contract : tiene un
+Employee *--  Commission : tiene un
+
+@enduml
