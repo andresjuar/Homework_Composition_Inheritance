@@ -13,12 +13,25 @@ Ambas implementaciones buscan resolver el mismo problema y producen una salida e
 Homework_Composition_Inheritance/
 │
 ├── composition/
-│   ├── main.py
-│   └── ...
+│ ├── Commission.py 
+│ ├── Contract.py 
+│ ├── ContractComission.py 
+│ ├── Employee.py 
+│ ├── FreelancerContract.py 
+│ ├── HourlyContract.py 
+│ ├── main.py 
+│ └── SalariedContract.py
 │
 ├── inheritance/
-│   ├── main.py
-│   └── ...
+|   ├── Employee.py 
+|   ├── Freelancer.py 
+|   ├── HourlyEmployee.py 
+|   ├── main.py 
+|   ├── SalariedEmployee.py 
+│   └── withCommission/ 
+|       ├── FreelancerWithCommission 
+|       ├── HourlyEmployeeWithCommission.py 
+|       └── SalariedEmployeeWithCommission.py
 │
 └── README.md
 ```
